@@ -242,7 +242,7 @@ export const DbService = {
     getWithdrawals: async (userId?: string): Promise<Withdrawal[]> => {
         // ADMIN MODE: Use Secure RPC
         if (!userId) {
-            const { data, error } = await supabase.rpc('admin_get_withdrawals', { p_secret: 'EARNIFY_ADMIN_SECURED_2026' });
+            const { data, error } = await supabase.rpc('admin_get_withdrawals', { p_secret: process.env.ADMIN_RPC_SECRET });
             if (error) {
                 console.error('Error fetching withdrawals (RPC):', error);
                 return [];
@@ -359,7 +359,7 @@ export const DbService = {
     // ADMIN STATS
     getAllUsers: async (): Promise<any[]> => {
         // USE SECURE RPC
-        const { data: users, error } = await supabase.rpc('admin_get_users', { p_secret: 'EARNIFY_ADMIN_SECURED_2026' });
+        const { data: users, error } = await supabase.rpc('admin_get_users', { p_secret: process.env.ADMIN_RPC_SECRET });
 
         if (error) {
             console.error('Error fetching users (RPC):', error);

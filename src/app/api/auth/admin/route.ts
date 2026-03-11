@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
         // Exact match check (Env Var OR Hardcoded Backup for reliability)
         // Note: Hardcoding here is safe from "Inspect Element" as this runs on the server.
-        if (password.trim() === SECRET_PASS || password.trim() === '090991') {
+        if (password.trim() === SECRET_PASS) {
             return NextResponse.json({ success: true });
         } else {
             return NextResponse.json({ success: false, message: 'Invalid Password' }, { status: 401 });

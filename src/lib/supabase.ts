@@ -2,7 +2,7 @@
 import { createClient } from '@supabase/supabase-js';
 
 // Hardcoded for successful build context (User provided)
-const supabaseUrl = 'https://iwmbzyafquldfsmcraxb.supabase.co';
-const supabaseKey = 'sb_publishable_4UGmmiKVZEuIzBrosLVJFw_huaJOJgX';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
