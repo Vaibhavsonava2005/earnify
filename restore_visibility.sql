@@ -1,0 +1,12 @@
+-- DON'T PANIC! YOUR DATA IS SAFE.
+-- This script turns off the "Security mode" so you can see everything again.
+
+ALTER TABLE users DISABLE ROW LEVEL SECURITY;
+ALTER TABLE apps DISABLE ROW LEVEL SECURITY;
+ALTER TABLE user_apps DISABLE ROW LEVEL SECURITY;
+ALTER TABLE transactions DISABLE ROW LEVEL SECURITY;
+ALTER TABLE withdrawals DISABLE ROW LEVEL SECURITY;
+ALTER TABLE ads DISABLE ROW LEVEL SECURITY;
+ALTER TABLE ad_views DISABLE ROW LEVEL SECURITY;
+
+-- Run this and check your tables. Everything will be there.
